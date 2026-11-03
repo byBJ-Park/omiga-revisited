@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\caption{Behavior cloning (BC) on the OMIGA Multi-Agent MuJoCo datasets, evaluated in MuJoCo 2.0, the engine that generated the datasets and that the OMIGA code requires. Data mean is the average episode return in each dataset. BC is reported as mean (standard deviation) over five seeds, each averaged over 100 episodes from a fixed set of initial states. Survival is the fraction of BC evaluation episodes that reach the 1000-step limit, reported for the two tasks with a termination condition. OMIGA denotes the results reported in the original paper~\cite{wang2023offline} (five seeds). Bold marks the higher mean of BC and OMIGA; both are bold when their difference is smaller than the larger of the two standard deviations.}
+\label{tab:bc}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccc}
+\hline
+Task & Dataset & Data mean & BC & BC/Data mean & Survival & OMIGA \\
+\hline
+Hopper & expert & 2452 & \textbf{3524 (110)} & 1.44 & 0.99 & 860 (709) \\
+ & medium-expert & 1191 & \textbf{3308 (568)} & 2.78 & 0.85 & 709 (596) \\
+ & medium & 724 & \textbf{824 (54)} & 1.14 & 0.00 & \textbf{1189 (544)} \\
+ & medium-replay & 746 & \textbf{413 (94)} & 0.55 & 0.00 & \textbf{774 (494)} \\
+\hline
+HalfCheetah & expert & 2785 & \textbf{4747 (63)} & 1.70 & -- & 3384 (553) \\
+ & medium-expert & 2105 & \textbf{4392 (187)} & 2.09 & -- & 2948 (519) \\
+ & medium & 1426 & 2698 (43) & 1.89 & -- & \textbf{3608 (237)} \\
+ & medium-replay & 656 & 707 (610) & 1.08 & -- & \textbf{2505 (83)} \\
+\hline
+Ant & expert & 2055 & \textbf{2053 (4)} & 1.00 & 1.00 & \textbf{2055 (2)} \\
+ & medium-expert & 1737 & \textbf{1763 (135)} & 1.02 & 1.00 & \textbf{1720 (111)} \\
+ & medium & 1419 & \textbf{1418 (5)} & 1.00 & 1.00 & \textbf{1418 (5)} \\
+ & medium-replay & 1030 & \textbf{1051 (49)} & 1.02 & 1.00 & \textbf{1105 (89)} \\
+\hline
+\end{tabular*}
+\end{table*}

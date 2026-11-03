@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{Returns on the OMIGA datasets as mean (standard deviation). Bold marks the highest result among later methods in each row. Brackets give the returns of OMIGA, BC, and OMIGA+BC as a percentage of the bold value in the same row. The bottom row reports each method's average percentage of the boldfaced return across datasets. Values for OMIGA and later methods are taken from their papers. $^\dagger$Evaluated by us in MuJoCo~2.0 under the protocol of Section~\ref{sec:omiga-bc-setup}.}
+\label{tab:compare}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llcccccccc}
+\hline
+Task & Dataset & ComaDICE & Oryx & MAC-Flow & B3C & OMSD & OMIGA & BC$^\dagger$ & OMIGA+BC$^\dagger$ \\
+\hline
+Hopper & E & 2828 (63) & 1812 (1270) & 3592 (9) & \textbf{3620 (2)} & 3595 (66) & 860 (709) [24\%] & 3524 (110) [97\%] & 3600 (19) [99\%] \\
+ & M-E & 1362 (523) & 1970 (1480) & 2988 (480) & 3328 (370) & \textbf{3568 (45)} & 709 (596) [20\%] & 3308 (568) [93\%] & 2623 (1159) [74\%] \\
+ & M & 823 (66) & 2050 (927) & 1024 (253) & 3243 (129) & \textbf{3360 (276)} & 1189 (544) [35\%] & 824 (54) [25\%] & 2856 (154) [85\%] \\
+ & M-R & 906 (242) & \textbf{1223 (545)} & 1166 (452) & 737 (469) & -- & 774 (494) [63\%] & 413 (94) [34\%] & 423 (128) [35\%] \\
+\hline
+HalfCheetah & E & 4083 (46) & 4784 (162) & 4650 (272) & 5404 (170) & \textbf{5545 (156)} & 3384 (553) [61\%] & 4747 (63) [86\%] & 5515 (255) [99\%] \\
+ & M-E & 3890 (82) & 4183 (173) & 5140 (84) & \textbf{5414 (99)} & 5237 (46) & 2948 (519) [54\%] & 4392 (187) [81\%] & 5298 (62) [98\%] \\
+ & M & 2665 (54) & 3753 (203) & 4358 (369) & \textbf{4757 (56)} & 4695 (62) & 3608 (237) [76\%] & 2698 (43) [57\%] & 4699 (234) [99\%] \\
+ & M-R & 2855 (242) & 3521 (224) & 3030 (437) & \textbf{4603 (150)} & 4582 (52) & 2505 (83) [54\%] & 707 (610) [15\%] & 4554 (109) [99\%] \\
+\hline
+Ant & E & 2057 (6) & 2061 (9) & 2060 (20) & 2163 (46) & \textbf{2191 (46)} & 2055 (2) [94\%] & 2053 (4) [94\%] & 2052 (6) [94\%] \\
+ & M-E & 1814 (68) & 1863 (119) & 2053 (20) & \textbf{2078 (194)} & 2002 (124) & 1720 (111) [83\%] & 1763 (135) [85\%] & 1720 (114) [83\%] \\
+ & M & 1425 (3) & 1426 (7) & 1432 (18) & 1516 (15) & \textbf{1619 (77)} & 1418 (5) [88\%] & 1418 (5) [88\%] & 1419 (8) [88\%] \\
+ & M-R & 1123 (61) & 1213 (113) & \textbf{1498 (20)} & 1260 (302) & 1009 (43) & 1105 (89) [74\%] & 1051 (49) [70\%] & 1017 (34) [68\%] \\
+\hline
+\multicolumn{2}{l}{Average percentage of the best return} & 68.5\% & 78.2\% & 85.5\% & 93.7\% & 96.2\% & 60.5\% & 68.6\% & 85.0\% \\
+\hline
+\end{tabular*}
+\end{table*}

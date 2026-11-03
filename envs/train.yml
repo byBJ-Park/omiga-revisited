@@ -1,0 +1,19 @@
+# Training environment: OMIGA critics, behaviour cloning, the controlled comparison, OMIGA+BC, the action spread,
+# and the table/figure scripts. The MuJoCo 3 environment inside is used only for the evaluations logged during
+# training. Versions are the ones the paper's runs used.
+#   conda env create -f envs/train.yml && conda activate omiga-train
+name: omiga-train
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - torch==2.13.0            # any CUDA build of 2.x works; the paper used torch 2.13.0+cu130
+      - numpy==2.4.6
+      - gymnasium==1.3.0
+      - imageio==2.37.4          # imported by gymnasium.envs.mujoco
+      - mujoco==3.11.0
+      - h5py==3.16.0
+      - matplotlib==3.11.1
+      - scipy==1.17.1

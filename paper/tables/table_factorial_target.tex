@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\caption{Behavior cloning with the regression target (the latent $\operatorname{atanh}(a)$ used by the OMIGA actor, or the action $a$) and the loss (Gaussian negative log-likelihood with a learned scale, or squared error) varied independently. The first column is the actor of the OMIGA code. Mean (standard deviation) over three seeds of the return on 100 fixed initial states in MuJoCo 2.0; survival in brackets for the tasks with a termination condition. Out of range is the share of dataset action components with $|a|>1$. The design and the predictions were registered before training.}
+\label{tab:param2x2}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccc}
+\hline
+ & & & \multicolumn{2}{c}{Target $\operatorname{atanh}(a)$} & \multicolumn{2}{c}{Target $a$} \\
+Task & Dataset & Out of range & NLL & MSE & NLL & MSE \\
+\hline
+Hopper & expert & 28.4\% & 439 (493) [0.05] & 98 (6) [0.00] & 3160 (666) [0.88] & 3470 (115) [0.98] \\
+Hopper & medium-expert & 19.2\% & 146 (50) [0.01] & 117 (37) [0.00] & 2981 (752) [0.78] & 3112 (708) [0.76] \\
+Hopper & medium-replay & 0.3\% & 165 (15) [0.00] & 1358 (584) [0.25] & 344 (165) [0.03] & 439 (122) [0.00] \\
+HalfCheetah & expert & 42.9\% & 2633 (177) & 2373 (941) & 4701 (144) & 4774 (48) \\
+HalfCheetah & medium-expert & 31.7\% & 2037 (125) & 2013 (315) & 4272 (260) & 4376 (188) \\
+Ant & medium & 0.0\% & 1418 (3) [1.00] & 1414 (2) [1.00] & 1416 (10) [1.00] & 1416 (5) [1.00] \\
+\hline
+\end{tabular*}
+\end{table*}

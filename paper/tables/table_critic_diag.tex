@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Critic diagnostics. $\sigma_{10}$: state-conditional action spread. $\Delta E$: change in overestimation from $\eta=0$ to $\eta=10$, with a 95\% $t$-interval over critic seeds. $d$: mean deviation of the policy from the local data actions, in units of $\sigma_{10}$.}
+\label{tab:chain}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}llccc}
+\hline
+Task & Dataset & $\sigma_{10}$ & $\Delta E$ & $d$ ($\eta=0$ / $10$) \\
+\hline
+Hopper & E & 0.384 & $-$0.00 [$-$0.01, 0.00] & 0.3 / 0.3 \\
+ & ME & 0.403 & 5.29 [1.98, 8.60] & 0.4 / 0.5 \\
+ & M & 0.359 & $-$0.08 [$-$0.17, 0.00] & 0.3 / 0.4 \\
+ & MR & 0.046 & 5.37 [0.63, 10.12] & 0.7 / 13.5 \\
+\hline
+HalfCheetah & E & 0.374 & $-$0.06 [$-$0.09, $-$0.04] & 0.3 / 0.3 \\
+ & ME & 0.401 & $-$0.15 [$-$0.19, $-$0.12] & 0.3 / 0.3 \\
+ & M & 0.362 & $-$0.28 [$-$0.31, $-$0.25] & 0.3 / 0.5 \\
+ & MR & 0.385 & $-$0.30 [$-$0.52, $-$0.09] & 0.4 / 0.7 \\
+\hline
+Ant & E & 0.043 & 4.71 [2.46, 6.97] & 0.7 / 11.9 \\
+ & ME & 0.042 & 2.08 [1.79, 2.38] & 0.7 / 21.5 \\
+ & M & 0.023 & 3.30 [1.79, 4.81] & 0.7 / 25.2 \\
+ & MR & 0.018 & 3.08 [$-$12.69, 18.85] & 0.8 / 52.8 \\
+\hline
+\end{tabular*}
+\end{table}

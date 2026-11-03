@@ -1,0 +1,29 @@
+% Hyperparameters of OMIGA+BC (scripts/extract_td3bc.py), checked against the saved run configs (log.json) of the alpha
+% sweep (scripts/alpha_plain_run.sh, alpha_hc_run.sh, alpha_hc4_run.sh) and ACCESS/scripts/run_x1_alpha0.sh: identical
+% apart from eta. Critic: OMIGA Q_tot, final checkpoint (10^6 steps), online network.
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Hyperparameters of OMIGA+BC.}
+\label{tab:hyperparams}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\columnwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\hline
+Hyperparameter & Value \\
+\hline
+Critic & OMIGA $Q_{\mathrm{tot}}$, frozen (final checkpoint) \\
+Policy network & shared by the agents; input: local observation and one-hot agent identifier \\
+Hidden layers & 2 $\times$ 256, ReLU \\
+Output & deterministic, $\tanh$ \\
+Loss & $-\lambda\,Q_{\mathrm{tot}}(s,\pi(o)) + \lVert\pi(o)-a\rVert^2$, $\lambda=\eta/\mathbb{E}\lvert Q_{\mathrm{tot}}\rvert$ \\
+$\eta$ & $\{0, 2.5, 5, 10, 40\}$ \\
+Optimizer & Adam \\
+Learning rate & $3\times10^{-4}$ \\
+Batch size & 256 \\
+Gradient-norm clipping & 1.0 \\
+Training steps & $3\times10^5$ \\
+Evaluated policy & final iterate \\
+Seeds & 0--4 (seed $i$ uses the critic of OMIGA seed $i$) \\
+\hline
+\end{tabularx}
+\end{table}

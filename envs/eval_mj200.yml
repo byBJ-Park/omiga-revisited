@@ -1,0 +1,38 @@
+# Evaluation environment: MuJoCo 2.0 through mujoco-py 2.0.2.13 and gym 0.10.8, the stack the OMIGA datasets were
+# generated with. Every return reported in the paper comes from this environment (omiga_rev/eval_mj200.py and the
+# critic diagnostics). CPU only.
+#
+#   1. Unpack MuJoCo 2.0 to ~/.mujoco/mujoco200 and put the key at ~/.mujoco/mjkey.txt
+#      (https://www.roboti.us/download.html; the key is free: https://www.roboti.us/license.html).
+#   2. export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200/bin
+#      Before step 5: the mujoco-py build reads this variable and fails without it.
+#   3. conda env create -f envs/eval_mj200.yml && conda activate omiga-eval
+#   4. ln -s libOSMesa32.so $CONDA_PREFIX/lib/libOSMesa.so && ln -s libOSMesa32.so.8 $CONDA_PREFIX/lib/libOSMesa.so.8
+#      mujoco-py links -lOSMesa, and the conda mesalib package ships the library as libOSMesa32 only.
+#   5. pip install --no-build-isolation mujoco-py==2.0.2.13
+#      Separately and without build isolation, so that it is compiled with the Cython 0.29 of the environment
+#      (pip's isolated build pulls Cython 3, which does not compile mujoco-py 2.0). It compiles its extension
+#      here and again on first import (gcc and the GL headers come from the conda packages below; set
+#      MUJOCO_PY_FORCE_CPU=1 on a machine without a display). Keep LD_LIBRARY_PATH set when running.
+name: omiga-eval
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - cython=0.29.37
+  - gcc
+  - mesalib=17.3.9             # GL/osmesa.h for the mujoco-py build
+  - glew=2.1.0
+  - libgl-devel
+  - patchelf
+  - pip
+  - pip:
+      - gym==0.10.8
+      - numpy==2.0.2
+      - torch==2.8.0             # CPU build is enough: pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - h5py==3.14.0
+      - cffi==2.0.0
+      - fasteners==0.20
+      - glfw==2.10.2
+      - imageio==2.37.2
+      - lockfile==0.12.2

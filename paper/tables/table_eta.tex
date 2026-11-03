@@ -1,0 +1,31 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{OMIGA+BC for each value of $\eta$. With $\eta=0$ the critic term vanishes and OMIGA+BC reduces to behavior cloning. Mean (standard deviation) over five seeds, evaluated in MuJoCo~2.0; bold marks the highest mean in each row; the last row averages the means over the twelve datasets.}
+\label{tab:eta-ablation}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrrr@{}}
+\hline
+ & & \multicolumn{5}{c}{$\eta$} \\
+\cline{3-7}
+Task & Dataset & 0 & 2.5 & 5 & 10 & 40 \\
+\hline
+Hopper & expert & 3591 (23) & 3593 (34) & \textbf{3600 (19)} & 3597 (19) & 1989 (727) \\
+ & medium-expert & \textbf{2623 (1159)} & 2471 (1131) & 1016 (642) & 100 (20) & 57 (6) \\
+ & medium & 805 (30) & 2112 (248) & \textbf{2856 (154)} & 2694 (398) & 645 (245) \\
+ & medium-replay & \textbf{423 (128)} & 229 (58) & 116 (54) & 111 (87) & 48 (28) \\
+\hline
+HalfCheetah & expert & 4728 (76) & 4655 (209) & 4937 (168) & 5307 (53) & \textbf{5515 (255)} \\
+ & medium-expert & 4177 (179) & 4868 (111) & 5098 (65) & \textbf{5298 (62)} & 5187 (123) \\
+ & medium & 2702 (61) & 3750 (93) & 4330 (158) & \textbf{4699 (234)} & 4470 (391) \\
+ & medium-replay & 2197 (825) & \textbf{4554 (109)} & 4429 (183) & 4142 (124) & 3841 (172) \\
+\hline
+Ant & expert & \textbf{2052 (6)} & 1981 (70) & 729 (543) & $-$297 (366) & $-$1202 (786) \\
+ & medium-expert & \textbf{1720 (114)} & $-$800 (476) & $-$1468 (397) & $-$2075 (641) & $-$2238 (699) \\
+ & medium & \textbf{1419 (8)} & 1218 (217) & 590 (556) & $-$554 (445) & $-$794 (418) \\
+ & medium-replay & \textbf{1017 (34)} & 510 (740) & 401 (733) & 361 (605) & $-$1666 (683) \\
+\hline
+\multicolumn{2}{@{}l}{Mean} & 2288 & \textbf{2428} & 2220 & 1949 & 1321 \\
+\hline
+\end{tabular*}
+\end{table*}

@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{OMIGA's advantage-weighted policy extraction with the actor of the OMIGA code (tanh-Gaussian negative log-likelihood) and with a squared-error actor, both trained on the same frozen OMIGA critic. Mean (standard deviation) over three seeds of the return on 100 fixed initial states in MuJoCo 2.0; survival in brackets.}
+\label{tab:omiga-actor}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}llcc}
+\hline
+Task & Dataset & tanh-Gaussian NLL & Squared error \\
+\hline
+Hopper & expert & 923 (1348) [0.11] & 3341 (273) [0.94] \\
+Hopper & medium-expert & 92 (6) [0.00] & 1351 (1674) [0.35] \\
+Hopper & medium & 1137 (313) [0.14] & 1554 (48) [0.06] \\
+Hopper & medium-replay & 590 (365) [0.05] & 1911 (222) [0.53] \\
+Ant & medium & 1425 (2) [1.00] & 1412 (2) [1.00] \\
+\hline
+\end{tabular*}
+\end{table}
